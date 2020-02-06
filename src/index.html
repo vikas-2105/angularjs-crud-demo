@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CRUD Demo</title>  
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="app.js" type="text/javascript"></script>
+        <script src="maincontroller.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="assets/css/style.css"/>      
+    </head>
+    <body>       
+        <div id='content' name="appContainer" ng-app="myTutorialApp" ng-controller="mainController" ng-init="fetchData()">
+            <div class="header">
+                    <h2 style="text-align: end; width: 50%;">My Employees list</h2>
+                    <div class="add-btn-container">
+                        <div class="add-employee-btn" ng-click="addButtonClicked()">Add New Employee</div>
+                    </div>                    
+            </div>
+            <div ng-show="isAddDataContainerOpen" style="width: 98%; margin-left: 2%;">
+                <form  name="addNewDataContainer" >
+                    <label>Name: </label>
+                    <input type="text" name="emp_name" ng-model="employee_name" class="add-newdata-input" required/>
+                    <label>Email: </label>
+                    <input type="email" name="emp_email" ng-model="employee_email" class="add-newdata-input" required/>
+                    <button 
+                        ng-disabled="addNewDataContainer.emp_name.$invalid || addNewDataContainer.emp_email.$invalid"
+                        ng-click="addNewData()"
+                        class="add-newdata-btn"
+                    >
+                        Add
+                    </button>
+                </form>
+            </div>
+            <div ng-show="isUpdateDataContainerOpen" style="width: 98%; margin-left: 2%;">
+                <form  name="updateDataContainer" >
+                    <label>Name: </label>
+                    <input type="text" name="emp_name" ng-model="employee_name" class="add-newdata-input" required/>
+                    <label>Email: </label>
+                    <input type="email" name="emp_email" ng-model="employee_email" class="add-newdata-input" required/>
+                    <button 
+                        ng-disabled="updateDataContainer.emp_name.$invalid || updateDataContainer.emp_email.$invalid"
+                        ng-click="updateData()"
+                        class="add-newdata-btn"
+                    >
+                        Update
+                    </button>
+                </form>
+            </div>
+            <div ng-hide="isLoading" ng-repeat="employee in employees" ng-model="employees">
+                <div id={{employee.id}} class="employee-data-wrapper">
+                    <img src={{employee.avatar}} class="employee-avatar">
+                    <div class="employee-data">
+                        <span style="font-weight: 600;">{{employee.first_name + " " + employee.last_name}}</span>
+                        <span>{{employee.email}}</span>
+                    </div>
+                    <div class="update-employee-btn" ng-click="updateButtonClicked(employee.first_name, employee.last_name, employee.email, employee.id)">Update</div>
+                    <div class="delete-employee-btn" ng-click="deleteData(employee.id, $index)">Delete</div>
+                </div>
+            </div>
+            <div ng-show="page<total_pages" ng-click="fetchData()" class="load-more-text"> Load More...</div>
+            <div ng-show="isLoading">Loading....</div>
+        </div>
+    </body>
+</html>

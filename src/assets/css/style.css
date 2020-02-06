@@ -1,0 +1,98 @@
+.header{
+    display: flex;
+    width: 100%;
+}
+
+.add-btn-container{
+    width: 50%;
+    align-self: center;
+}
+
+.employee-data-wrapper{
+    display: flex;
+    width: 95;
+    margin: 15px;
+}
+
+.employee-avatar{
+    width: 82px;
+    height: 82px;
+    border-radius: 41px;
+}
+
+.employee-data{
+    align-self: center;
+    margin-left: 10px;
+    font-size: large;
+    display: grid;
+    width: 25%;
+}
+
+.load-more-text{
+    text-align: center;
+    cursor: pointer;
+    font-size: large;
+    width: max-content;
+    margin: auto;
+}
+
+.load-more-text:hover{
+    border-bottom: 1px solid black;
+}
+
+.add-newdata-input{
+    height: 21px;
+    width: 20%;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 3px;
+}
+
+.add-newdata-btn{
+    display: block;
+    width: 15%;
+    font-size: medium;
+    border-radius: 7px;
+    padding: 6px;
+    margin-top: 15px;
+}
+
+.update-employee-btn{
+    border-radius: 6px;
+    text-align: center;
+    width: 90px;
+    padding: 10px;
+    font-size: large;
+    align-self: center;
+    margin: 0 50px;
+    background: #4db51aba;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-employee-btn{
+    border-radius: 6px;
+    text-align: center;
+    width: 90px;
+    padding: 10px;
+    font-size: large;
+    align-self: center;
+    margin: 0 50px;
+    background: #de2626ba;
+    color: white;
+    cursor: pointer;
+}
+
+.add-employee-btn{
+    border-radius: 6px;
+    text-align: center;
+    width: 165px;
+    padding: 10px;
+    font-size: large;
+    align-self: center;
+    background: #39c1c7ba;
+    color: white;
+    float: right;
+    margin-right: 25px;
+    cursor: pointer;
+}
