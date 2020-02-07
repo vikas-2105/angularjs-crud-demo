@@ -42,7 +42,7 @@
 
 .add-newdata-input{
     height: 21px;
-    width: 46%;
+    width: 20%;
     display: block;
     margin-bottom: 10px;
     margin-top: 3px;
@@ -50,13 +50,11 @@
 
 .add-newdata-btn{
     display: block;
-    width: 17%;
+    width: 15%;
     font-size: medium;
     border-radius: 7px;
     padding: 6px;
-    margin-top: 20px;
-    margin-left: 4%;
-    cursor: pointer;
+    margin-top: 15px;
 }
 
 .update-employee-btn{
@@ -69,7 +67,6 @@
     margin: 0 50px;
     background: #4db51aba;
     color: white;
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -98,5 +95,4 @@
     float: right;
     margin-right: 25px;
     cursor: pointer;
-    text-decoration: none;
 }
