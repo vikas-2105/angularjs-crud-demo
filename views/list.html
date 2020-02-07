@@ -1,0 +1,15 @@
+<div id='content' name="appContainer" ng-controller="ListingController" ng-init="init()">
+    <div ng-hide="isLoading" ng-repeat="employee in employees" ng-model="employees">
+        <div id={{employee.id}} class="employee-data-wrapper">
+            <img src={{employee.avatar}} class="employee-avatar">
+            <div class="employee-data">
+                <span style="font-weight: 600;">{{employee.first_name + " " + employee.last_name}}</span>
+                <span>{{employee.email}}</span>
+            </div>
+            <a class="update-employee-btn" ng-click="updateButtonClicked(employee.first_name, employee.last_name, employee.email, employee.id)">Update</a>
+            <div class="delete-employee-btn" ng-click="deleteData(employee.id, $index)">Delete</div>
+        </div>
+    </div>
+    <div ng-show="page<total_pages" ng-click="fetchData()" class="load-more-text"> Load More...</div>
+    <div ng-show="isLoading">Loading....</div>
+</div>
